@@ -156,7 +156,7 @@ elif menu == "☁️ 天氣預報":
             st.markdown("##### 🇯🇵 日本氣象協會 (Tenki.jp)")
             st.write("含登山指數 (A/B/C) 與詳細小時預報。")
             # Code 19150004 是山梨縣北岳的專屬代碼
-            st.link_button("前往 Tenki.jp 北岳", "https://tenkura.n-kishou.co.jp/tk/kanko/kad.html?code=19150004&type=15&ba=kk")
+            st.link_button("前往 Tenki.jp 北岳", "https://tenkura.n-kishou.co.jp/tk/kanko/kad.html?code=19150008&type=15&ba=kk")
         with col2:
             st.markdown("##### 🌍 Mountain Forecast")
             st.write("含 3000m 稜線風速與體感溫度。")
@@ -179,7 +179,7 @@ elif menu == "☁️ 天氣預報":
         with col1:
             st.markdown("##### 🇯🇵 日本氣象協會 (Tenki.jp)")
             # Code 19150026 是農鳥岳代碼
-            st.link_button("前往 Tenki.jp 農鳥岳", "https://tenkura.n-kishou.co.jp/tk/kanko/kad.html?code=19150026&type=15&ba=kk")
+            st.link_button("前往 Tenki.jp 農鳥岳", "https://tenkura.n-kishou.co.jp/tk/kanko/kad.html?code=19150045&type=15&ba=kk")
         with col2:
             st.markdown("##### 🌍 Mountain Forecast")
             st.link_button("前往 MF 農鳥岳 (3026m)", "https://www.mountain-forecast.com/peaks/Notori-dake/forecasts/3026")
