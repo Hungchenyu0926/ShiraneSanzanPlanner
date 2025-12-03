@@ -22,7 +22,7 @@ menu = st.sidebar.radio(
 # --- 功能 1: 行程規劃 ---
 if menu == "📅 行程規劃 (4天3夜)":
     st.header("推薦行程：4天3夜 (北進南出)")
-    st.caption("此行程設計為膝蓋友善版，將下坡拆解，並盡情享受稜線大景。")
+    st.caption("此行程設計為將回程拆解，並盡情享受稜線大景。")
     
     col1, col2 = st.columns([1, 2])
     with col1:
