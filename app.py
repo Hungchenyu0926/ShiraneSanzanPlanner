@@ -143,19 +143,46 @@ elif menu == "🎒 裝備檢查清單":
 
 # --- 功能 4: 天氣預報 ---
 elif menu == "☁️ 天氣預報":
-    st.header("山區天氣預報")
-    st.markdown("高山天氣變化劇烈，請同時參考多個來源。")
+    st.header("🏔️ 白峰三山：高山氣象站")
+    st.info("💡 登山指數說明 (Tenki.jp)：A=適合，B=風雨稍強，C=強風豪雨不宜前往。")
     
-    col_w1, col_w2 = st.columns(2)
+    # 使用 Tabs 分頁來整理三座山，手機版瀏覽更清爽
+    tab1, tab2, tab3 = st.tabs(["北岳 (3193m)", "間之岳 (3190m)", "農鳥岳 (3026m)"])
     
-    with col_w1:
-        st.markdown("### 🇯🇵 Tenki.jp (北岳)")
-        st.write("日本氣象協會最準確的預報，包含風速與登山指數。")
-        st.link_button("前往 Tenki.jp 北岳頁面", "https://tenkura.n-kishou.co.jp/tk/kanko/kad.html?code=19150004&type=15&ba=kk")
-        
-    with col_w2:
-        st.markdown("### 🏔️ Mountain-Forecast")
-        st.write("提供不同海拔 (1500m/2500m/3193m) 的氣溫與風寒效應。")
-        st.link_button("前往 Mountain Forecast", "https://www.mountain-forecast.com/peaks/Kita-dake/forecasts/3193")
-        
-    st.info("💡 提示：A級代表適合登山，C級代表強風或豪雨，請勿強行入山。")
+    with tab1:
+        st.subheader("北岳 (Kitadake)")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.markdown("##### 🇯🇵 日本氣象協會 (Tenki.jp)")
+            st.write("含登山指數 (A/B/C) 與詳細小時預報。")
+            # Code 19150004 是山梨縣北岳的專屬代碼
+            st.link_button("前往 Tenki.jp 北岳", "https://tenkura.n-kishou.co.jp/tk/kanko/kad.html?code=19150004&type=15&ba=kk")
+        with col2:
+            st.markdown("##### 🌍 Mountain Forecast")
+            st.write("含 3000m 稜線風速與體感溫度。")
+            st.link_button("前往 MF 北岳 (3193m)", "https://www.mountain-forecast.com/peaks/Kita-dake/forecasts/3193")
+
+    with tab2:
+        st.subheader("間之岳 (Ainodake)")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.markdown("##### 🇯🇵 日本氣象協會 (Tenki.jp)")
+            # Code 20150025 是長野/山梨交界間之岳代碼
+            st.link_button("前往 Tenki.jp 間之岳", "https://tenkura.n-kishou.co.jp/tk/kanko/kad.html?code=20150025&type=15&ba=kk")
+        with col2:
+            st.markdown("##### 🌍 Mountain Forecast")
+            st.link_button("前往 MF 間之岳 (3189m)", "https://www.mountain-forecast.com/peaks/Aino-dake/forecasts/3189")
+
+    with tab3:
+        st.subheader("農鳥岳 (Notoridake)")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.markdown("##### 🇯🇵 日本氣象協會 (Tenki.jp)")
+            # Code 19150026 是農鳥岳代碼
+            st.link_button("前往 Tenki.jp 農鳥岳", "https://tenkura.n-kishou.co.jp/tk/kanko/kad.html?code=19150026&type=15&ba=kk")
+        with col2:
+            st.markdown("##### 🌍 Mountain Forecast")
+            st.link_button("前往 MF 農鳥岳 (3026m)", "https://www.mountain-forecast.com/peaks/Notori-dake/forecasts/3026")
+
+    st.divider()
+    st.warning("⚠️ 注意：農鳥岳位於縱走最南端，容易受到來自太平洋的氣流影響，午後起霧或雷雨的機率通常比北岳高，請務必在中午前通過稜線。")
